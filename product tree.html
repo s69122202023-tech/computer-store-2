@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Store Network</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+    <section class="hero-banner">
+    <img src="img/bg.jpg" alt="Computer Store">
+    <div class="hero-content">
+        <h1>Computer Store</h1>
+        <p>ร้านขายอุปกรณ์คอมพิวเตอร์</p>
+    </div>
+</section>
+<header>
+  <div class="brand">🖥️ Computer Store Network</div>
+ <nav> <a href="index.html">หน้าหลัก</a>  
+    <a href="path graph.html">เวลาขนส่ง</a>
+      <a href="weighted.html">เส้นทางขนส่ง</a>
+    <a class="active" href="product tree.html">โครงสร้างหมวดหมู่สินค้า</a></nav>
+</header>
+<main class="container">
+  <div class="page-title"><span class="badge">โครงสร้างหมวดหมู่สินค้า</span><h1>แสดงโครงสร้างสินค้าของร้าน</h1><p>แบ่งออกเป็นอุปกรณ์ภายในคอมพิวเตอร์
+    และอุปกรณ์ภายนอกคอมพิวเตอร์</p></div>
+  <section class="panel">
+    <div class="tree-controls">
+      <button class="btn" onclick="showTreeTraversal('preorder')">ตามลำดับ</button>
+
+
+      <button class="btn secondary" onclick="showTreeTraversal('bfs')">ใหญ่-ย่อย</button>
+    </div>
+    <div id="treeView" class="tree-view"></div>
+    <div id="treeResult" class="result">กดปุ่มเพื่อดูการ Traversal</div>
+  </section>
+</main>
+<footer>Tree Structure • Product Categories</footer>
+</body>
+</html>

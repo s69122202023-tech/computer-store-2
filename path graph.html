@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Computer Store Network</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+  <section class="hero-banner">
+    <img src="img/bg.jpg" alt="Computer Store">
+    <div class="hero-content">
+        <h1>Computer Store</h1>
+        <p>ร้านขายอุปกรณ์คอมพิวเตอร์</p>
+    </div>
+</section>
+<header>
+
+    <div class="brand">
+        🖥️ Computer Store Network
+    </div>
+
+    <nav>
+        <a href="index.html">หน้าหลัก</a>  
+    <a class="active" href="path graph.html">เวลาขนส่ง</a>
+      <a href="weighted.html">เส้นทางขนส่ง</a>
+    <a href="product tree.html">โครงสร้างหมวดหมู่สินค้า</a>
+    </nav>
+
+</header>
+
+
+<main class="container">
+
+    <!-- PAGE TITLE -->
+    <section class="page-title">
+
+        <span class="badge">
+            Order Network
+        </span>
+
+        <h1>
+            ระบบเส้นทางคำสั่งซื้อสินค้า
+        </h1>
+
+        <p>
+            เส้นทางการสั่งซื้อสินค้าและการจัดส่ง
+        </p>
+
+    </section>
+
+
+    <!-- GRAPH -->
+   <section class="panel">
+
+    <h2>
+        <img src="img/logo.png" alt="logo" style="width: 5%">
+        <p>Order Network</p>
+    </h2>
+
+    <div class="graph-container">
+
+        <div class="graph-node">
+
+            <div class="node-icon">
+                🛒
+            </div>
+
+            <h2>
+                เพิ่มสินค้าของคุณที่คุณต้องการเพื่อคำนวณเวลาในการขนส่ง
+            </h2>
+
+            <p>
+                <small>
+                    เวลาในการขนส่งจะแตกต่างกันไปตามจังหวัดปลายทาง
+                    และระบบขนส่งที่เลือก
+                </small>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ORDER -->
+<section class="panel">
+
+    <h2>
+        🛍️ คำนวณเวลาในการขนส่งสินค้า
+    </h2>
+
+        <div id="productList">
+
+            <!-- รายการสินค้าจะถูกสร้างด้วย JavaScript -->
+
+        </div>
+
+
+        <button
+            type="button"
+            class="btn secondary-btn"
+            id="addProduct">
+
+            ➕ เพิ่มสินค้า
+
+        </button>
+
+
+        <div class="order-options">
+
+            <label>
+
+                จังหวัดปลายทาง
+
+                <select id="provinceSelect">
+
+                    <option value="Bangkok">
+                        กรุงเทพมหานคร
+                    </option>
+
+                    <option value="Nonthaburi">
+                        นนทบุรี
+                    </option>
+
+                    <option value="PathumThani">
+                        ปทุมธานี
+                    </option>
+
+                    <option value="SamutPrakan">
+                        สมุทรปราการ
+                    </option>
+
+                    <option value="NakhonPathom">
+                        นครปฐม
+                    </option>
+
+                    <option value="SamutSakhon">
+                        สมุทรสาคร
+                    </option>
+
+                    <option value="SamutSongkhram">
+                        สมุทรสงคราม
+                    </option>
+
+                    <option value="Ayutthaya">
+                        พระนครศรีอยุธยา
+                    </option>
+
+                    <option value="AngThong">
+                        อ่างทอง
+                    </option>
+
+                    <option value="Lopburi">
+                        ลพบุรี
+                    </option>
+
+                    <option value="SingBuri">
+                        สิงห์บุรี
+                    </option>
+
+                    <option value="ChaiNat">
+                        ชัยนาท
+                    </option>
+
+                    <option value="Saraburi">
+                        สระบุรี
+                    </option>
+
+                    <option value="SuphanBuri">
+                        สุพรรณบุรี
+                    </option>
+
+                    <option value="Kanchanaburi">
+                        กาญจนบุรี
+                    </option>
+
+                    <option value="Ratchaburi">
+                        ราชบุรี
+                    </option>
+
+                    <option value="Phetchaburi">
+                        เพชรบุรี
+                    </option>
+
+                    <option value="PrachuapKhiriKhan">
+                        ประจวบคีรีขันธ์
+                    </option>
+
+                </select>
+
+            </label>
+
+
+            <label>
+
+                ระบบขนส่ง
+
+                <select id="transportSelect">
+
+                    <option value="Express">
+                        Express
+                    </option>
+
+                    <option value="Standard">
+                        Standard
+                    </option>
+
+                    <option value="Economy">
+                        Economy
+                    </option>
+
+                </select>
+
+            </label>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="btn"
+            id="calculateOrder">
+
+            🚚 คำนวณการจัดส่ง
+
+        </button>
+
+
+        <div
+            id="orderResult"
+            class="result">
+
+            เพิ่มสินค้าแล้วกด
+            "คำนวณการจัดส่ง"
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SUMMARY -->
+    <section class="panel">
+
+        <h2>
+            📊 สรุปคำสั่งซื้อ
+        </h2>
+
+
+        <div class="summary-grid">
+
+            <div class="summary-card">
+
+                <span>
+                    จำนวนรายการ
+                </span>
+
+                <strong id="summaryItems">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    จำนวนสินค้ารวม
+                </span>
+
+                <strong id="summaryQuantity">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    จังหวัดปลายทาง
+                </span>
+
+                <strong id="summaryProvince">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    ระบบขนส่ง
+                </span>
+
+                <strong id="summaryTransport">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    เวลาจัดส่งรวม
+                </span>
+
+                <strong id="summaryTime">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    สถานะ
+                </span>
+
+                <strong id="summaryStatus">
+                    รอคำสั่งซื้อ
+                </strong>
+            
+              </div>
+
+            
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    Computer Store Network
+    • Discrete Mathematics for IT
+
+</footer>
+
+</body>
+
+</html>

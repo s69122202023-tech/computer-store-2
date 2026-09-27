@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Computer Store Network</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+
+<body>
+  <section class="hero-banner">
+    <img src="img/bg.jpg" alt="Computer Store">
+    <div class="hero-content">
+        <h1>Computer Store</h1>
+        <p>ร้านขายอุปกรณ์คอมพิวเตอร์</p>
+    </div>
+</section>
+<header>
+
+    <div class="brand">
+        🖥️ Computer Store Network
+    </div>
+
+    <nav>
+<a href="index.html">หน้าหลัก</a>  
+    <a href="path graph.html">เวลาขนส่ง</a>
+      <a class="active" href="weighted.html">เส้นทางขนส่ง</a>
+    <a href="product tree.html">โครงสร้างหมวดหมู่สินค้า</a>
+    </nav>
+
+</header>
+
+
+<main class="container">
+
+
+    <!-- =========================================
+         PAGE TITLE
+         ========================================= -->
+
+    <section class="page-title">
+
+        <span class="badge">
+            Order information
+        </span>
+
+        <h1>
+            เส้นทางการขนส่งสินค้า
+        </h1>
+
+        <p>
+            จำลองเส้นทางจากร้านค้า
+            ผ่านผู้จัดส่ง
+            ไปยังจังหวัดปลายทาง
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================================
+         ORDER INFORMATION
+         ========================================= -->
+
+    <section class="panel">
+
+        <h2>
+            📦 ข้อมูลคำสั่งซื้อ
+        </h2>
+
+        <div
+            id="orderInfo"
+            class="order-info">
+
+            <p>
+                ยังไม่มีข้อมูลคำสั่งซื้อ
+                จากหน้า Graph
+            </p>
+
+            <p>
+                กรุณากลับไปหน้า Graph
+                เพื่อสร้างคำสั่งซื้อ
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         WEIGHTED GRAPH
+         ========================================= -->
+
+    <section class="panel">
+
+        <div class="weighted-title">
+
+            <div>
+
+                <span class="badge">
+                    Order 
+                </span>
+
+                <h2>
+                    🗺️ แผนที่จำลองเส้นทางจัดส่ง
+                </h2>
+
+                <p>
+                    ตัวเลขบนเส้นเชื่อม
+                    คือค่าน้ำหนักสมมุติ
+                    เช่น เวลา หรือระยะทาง
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="weighted-map">
+
+
+            <!-- STORE -->
+
+            <div
+                class="weighted-node store-node"
+                style="left: 8%; top: 46%;">
+
+                <div class="weighted-icon">
+                    🏪
+                </div>
+
+                <strong>
+                    ร้านค้า
+                </strong>
+
+                <small>
+                    Store
+                </small>
+
+            </div>
+
+
+
+            <!-- DELIVERY -->
+
+            <div
+                class="weighted-node delivery-node"
+                style="left: 37%; top: 24%;">
+
+                <div class="weighted-icon">
+                    🚚
+                </div>
+
+                <strong>
+                    ผู้ส่งสินค้า
+                </strong>
+
+                <small>
+                    Delivery
+                </small>
+
+            </div>
+
+
+
+            <!-- BANGKOK -->
+
+            <div
+                class="weighted-node province-node"
+                style="left: 38%; top: 70%;">
+
+                <div class="weighted-icon">
+                    📍
+                </div>
+
+                <strong>
+                    กรุงเทพฯ
+                </strong>
+
+                <small>
+                    Bangkok
+                </small>
+
+            </div>
+
+
+
+            <!-- NONTHABURI -->
+
+            <div
+                class="weighted-node province-node"
+                style="left: 59%; top: 49%;">
+
+                <div class="weighted-icon">
+                    📍
+                </div>
+
+                <strong>
+                    นนทบุรี
+                </strong>
+
+                <small>
+                    Nonthaburi
+                </small>
+
+            </div>
+
+
+
+            <!-- SAMUT PRAKAN -->
+
+            <div
+                class="weighted-node province-node"
+                style="left: 61%; top: 78%;">
+
+                <div class="weighted-icon">
+                    📍
+                </div>
+
+                <strong>
+                    สมุทรปราการ
+                </strong>
+
+                <small>
+                    Samut Prakan
+                </small>
+
+            </div>
+
+
+
+            <!-- AYUTTHAYA -->
+
+            <div
+                class="weighted-node province-node"
+                style="left: 78%; top: 50%;">
+
+                <div class="weighted-icon">
+                    📍
+                </div>
+
+                <strong>
+                    อยุธยา
+                </strong>
+
+                <small>
+                    Ayutthaya
+                </small>
+
+            </div>
+
+
+
+            <!-- CHIANG MAI -->
+
+            <div
+                class="weighted-node province-node"
+                style="left: 77%; top: 12%;">
+
+                <div class="weighted-icon">
+                    📍
+                </div>
+
+                <strong>
+                    เชียงใหม่
+                </strong>
+
+                <small>
+                    Chiang Mai
+                </small>
+
+            </div>
+
+
+
+            <!-- KHON KAEN -->
+
+            <div
+                class="weighted-node province-node"
+                style="left: 92%; top: 27%;">
+
+                <div class="weighted-icon">
+                    📍
+                </div>
+
+                <strong>
+                    ขอนแก่น
+                </strong>
+
+                <small>
+                    Khon Kaen
+                </small>
+
+            </div>
+
+
+
+            <!-- CHONBURI -->
+
+            <div
+                class="weighted-node province-node"
+                style="left: 92%; top: 70%;">
+
+                <div class="weighted-icon">
+                    📍
+                </div>
+
+                <strong>
+                    ชลบุรี
+                </strong>
+
+                <small>
+                    Chonburi
+                </small>
+
+            </div>
+
+
+
+            <!-- EDGES -->
+
+            <div
+                class="weighted-edge edge-store-delivery">
+
+                <span>
+                    3
+                </span>
+
+            </div>
+
+
+            <div
+                class="weighted-edge edge-delivery-chiangmai">
+
+                <span>
+                    8
+                </span>
+
+            </div>
+
+
+            <div
+                class="weighted-edge edge-delivery-khonkaen">
+
+                <span>
+                    7
+                </span>
+
+            </div>
+
+
+            <div
+                class="weighted-edge edge-delivery-chonburi">
+
+                <span>
+                    6
+                </span>
+
+            </div>
+
+
+            <div
+                class="weighted-edge edge-store-bangkok">
+
+                <span>
+                    2
+                </span>
+
+            </div>
+
+
+            <div
+                class="weighted-edge edge-store-nonthaburi">
+
+                <span>
+                    4
+                </span>
+
+            </div>
+
+
+            <div
+                class="weighted-edge edge-nonthaburi-ayutthaya">
+
+                <span>
+                    5
+                </span>
+
+            </div>
+
+
+            <div
+                class="weighted-edge edge-nonthaburi-nakhon">
+
+                <span>
+                    4
+                </span>
+
+            </div>
+
+
+            <div
+                class="weighted-edge edge-bangkok-samut">
+
+                <span>
+                    3
+                </span>
+
+            </div>
+
+
+            <div
+                class="weighted-edge edge-bangkok-ratcha">
+
+                <span>
+                    7
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- LEGEND -->
+
+        <div class="weighted-legend">
+
+            <div>
+                <span class="legend-line"></span>
+                เส้นเชื่อม
+            </div>
+
+            <div>
+                🔢 ตัวเลข = น้ำหนัก
+            </div>
+
+            <div>
+                🏪 ร้านค้า
+            </div>
+
+            <div>
+                🚚 ผู้ส่งสินค้า
+            </div>
+
+            <div>
+                📍 จังหวัดปลายทาง
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         SHORTEST PATH
+         ========================================= -->
+
+    <section class="panel">
+
+        <h2>
+            🔎 ทดลองหาเส้นทาง
+        </h2>
+
+        <div class="weighted-controls">
+
+            <label>
+
+                จาก
+
+                <select id="weightStart">
+                </select>
+
+            </label>
+
+
+            <label>
+
+                ไป
+
+                <select id="weightEnd">
+                </select>
+
+            </label>
+
+            <button
+                type="button"
+                class="btn"
+                onclick="runShortestPath()">
+
+                🔍 คำนวณเส้นทางที่มีน้ำหนักน้อยที่สุด
+
+            </button>
+
+        </div>
+
+
+        <div
+            id="weightResult"
+            class="result">
+
+            เลือกจุดเริ่มต้นและปลายทาง
+            แล้วกดคำนวณ
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         EDGE LIST
+         ========================================= -->
+
+    <section class="panel">
+
+        <h2>
+            📋 รายการเส้นเชื่อม
+        </h2>
+
+        <div
+            id="weightList"
+            class="weight-list">
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+
+    Computer Store Network
+    • Discrete Mathematics for IT
+
+</footer>
+
+
+</body>
+
+</html>
